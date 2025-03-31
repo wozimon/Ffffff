@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розв'язки Самостійної Роботи з Фізики</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Стилі для табів та базові стилі */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* gray-100 */
+        }
+        .tab-button {
+            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            color: #4b5563; /* gray-600 */
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: 500; /* medium */
+            cursor: pointer;
+        }
+        .tab-button:hover {
+            color: #1d4ed8; /* blue-700 */
+            border-bottom-color: #bfdbfe; /* blue-200 */
+        }
+        .tab-button.active-tab {
+            color: #1d4ed8; /* blue-700 */
+            border-bottom-color: #1d4ed8; /* blue-700 */
+            font-weight: 600; /* semibold */
+        }
+        .variant-section {
+            padding-top: 1.5rem; /* pt-6 */
+        }
+        .problem-card {
+            background-color: #ffffff; /* white */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            padding: 1.5rem; /* p-6 */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+        .problem-statement {
+            margin-bottom: 1rem; /* mb-4 */
+            font-weight: 500; /* medium */
+            color: #1f2937; /* gray-800 */
+        }
+        .section-label {
+            font-weight: 600; /* semibold */
+            color: #374151; /* gray-700 */
+            display: block;
+            margin-bottom: 0.25rem; /* mb-1 */
+        }
+        .section-content {
+            margin-left: 1rem; /* ml-4 */
+            margin-bottom: 0.75rem; /* mb-3 */
+            color: #1f2937; /* gray-800 */
+            line-height: 1.6; /* leading-relaxed */
+        }
+        .final-answer {
+            margin-top: 1rem; /* mt-4 */
+            font-weight: 700; /* bold */
+            color: #059669; /* green-700 */
+        }
+        /* Стиль для констант */
+        .constants-list li {
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
+        .constants-list code {
+            background-color: #e5e7eb; /* gray-200 */
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Розв'язки Самостійної Роботи з Фізики</h1>
+
+        <div class="mb-6 flex flex-wrap justify-center border-b border-gray-300">
+            <button class="tab-button active-tab" onclick="showVariant('variant1')">Варіант 1</button>
+            <button class="tab-button" onclick="showVariant('variant2')">Варіант 2</button>
+            <button class="tab-button" onclick="showVariant('variant3')">Варіант 3</button>
+            <button class="tab-button" onclick="showVariant('variant4')">Варіант 4</button>
+        </div>
+
+        <div id="variant1" class="variant-section">
+            <h2 class="text-2xl font-semibold mb-6 text-center text-gray-700">Варіант 1</h2>
+
+            <div class="problem-card">
+                <p class="problem-statement">№1. Яку кількість води можна нагріти від 30 до 100 °С та випарувати за рахунок розпаду 5 грам Урану-235?</p>
+                <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>M_U235 = 5 г = 0.005 кг</li>
+                        <li>t_поч = 30 °C</li>
+                        <li>t_кін = 100 °C</li>
+                        <li>c_води = 4200 Дж/(кг·°C)</li>
+                        <li>L_пароутв = 2.3 × 10⁶ Дж/кг</li>
+                        <li>W_поділу ≈ 3.204 × 10⁻¹¹ Дж</li>
+                        <li>m_атома(U-235) = 3.9 × 10⁻²⁵ кг</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">m_води - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Кількість атомів U-235: N_U235 = M_U235 / m_атома(U-235) = 0.005 / (3.9 × 10⁻²⁵) ≈ 1.282 × 10²² ядер</li>
+                        <li>Загальна енергія: Q_заг = N_U235 * W_поділу = (1.282 × 10²²) * (3.204 × 10⁻¹¹) ≈ 4.107 × 10¹¹ Дж</li>
+                        <li>Енергія на нагрів 1 кг води: Q_нагр_1кг = c_води * 1 * (100 - 30) = 4200 * 70 = 294000 Дж/кг</li>
+                        <li>Енергія на випаровування 1 кг води: Q_випар_1кг = L_пароутв * 1 = 2.3 × 10⁶ Дж/кг</li>
+                        <li>Загальна енергія на 1 кг води: Q_на_1кг = 294000 + 2300000 = 2.594 × 10⁶ Дж/кг</li>
+                        <li>Маса води: m_води = Q_заг / Q_на_1кг = (4.107 × 10¹¹) / (2.594 × 10⁶) ≈ 1.583 × 10⁵ кг</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 1.58 × 10⁵ кг (158 тонн) води.</p>
+            </div>
+
+            <div class="problem-card">
+                <p class="problem-statement">№2. За який час розпадеться 87.5 % радіоактивного ізотопу Йод-131?</p>
+                <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Йод-131</li>
+                        <li>Відсоток розпаду = 87.5 %</li>
+                        <li>T₁/₂(I-131) = 8 діб</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">t - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Залишилося: 100% - 87.5% = 12.5% = 0.125 = 1/8</li>
+                        <li>N(t) / N₀ = (1/2)^(t / T₁/₂)</li>
+                        <li>1/8 = (1/2)^(t / 8 діб)</li>
+                        <li>(1/2)³ = (1/2)^(t / 8 діб)</li>
+                        <li>3 = t / 8 діб => t = 3 * 8 = 24 доби</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: 24 доби.</p>
+            </div>
+
+             <div class="problem-card">
+                <p class="problem-statement">№3. В даний момент часу у радіоактивному зразку міститься 0.1 моль Плутонію-239. Визначте активність.</p>
+                <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Плутоній-239</li>
+                        <li>n = 0.1 моль</li>
+                        <li>λ(Pu-239) ≈ 9.01 × 10⁻¹³ с⁻¹</li>
+                        <li>NA ≈ 6.022 × 10²³ моль⁻¹</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">A - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Кількість ядер: N = n * NA = 0.1 * (6.022 × 10²³) = 6.022 × 10²² ядер</li>
+                        <li>Активність: A = λ * N = (9.01 × 10⁻¹³) * (6.022 × 10²²) ≈ 5.426 × 10¹⁰ Бк</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 5.43 × 10¹⁰ Бк.</p>
+            </div>
+
+             <div class="problem-card">
+                <p class="problem-statement">№4. Знайти енергію зв'язку Полонію-210.</p>
+                <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Полоній-210 (²¹⁰₈₄Po)</li>
+                        <li>m_атома(Po-210) = 209.98297 а.о.м.</li>
+                        <li>Z = 84, N = 126</li>
+                        <li>mH ≈ 1.00783 а.о.м.</li>
+                        <li>mn ≈ 1.00866 а.о.м.</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">Eзв - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Дефект мас: Δm ≈ (Z * mH + N * mn) - m_атома</li>
+                        <li>Δm ≈ (84 * 1.00783 + 126 * 1.00866) - 209.98297 ≈ 1.76591 а.о.м.</li>
+                        <li>Енергія зв'язку: Eзв = Δm * 931.5 МеВ/а.о.м.</li>
+                        <li>Eзв ≈ 1.76591 * 931.5 ≈ 1644.9 МеВ</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 1645 МеВ.</p>
+            </div>
+
+            <div class="problem-card">
+                <p class="problem-statement">№5. Активність речовини дорівнює 10.2 × 10⁷ Бк, а початкова кількість здатних до розпаду ядер 68.4 × 10¹². Обчисліть період напіврозпаду.</p>
+                <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>A₀ = 10.2 × 10⁷ Бк</li>
+                        <li>N₀ = 68.4 × 10¹² ядер</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">T₁/₂ - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>A₀ = (ln(2) / T₁/₂) * N₀</li>
+                        <li>T₁/₂ = (ln(2) * N₀) / A₀</li>
+                        <li>T₁/₂ ≈ (0.693 * 68.4 × 10¹²) / (10.2 × 10⁷) ≈ 4.647 × 10⁵ с</li>
+                        <li>T₁/₂ ≈ (4.647 × 10⁵ с) / (24 * 3600 с/добу) ≈ 5.38 діб</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 5.38 діб.</p>
+            </div>
+
+            <div class="problem-card">
+                <p class="problem-statement">№6. Період напіврозпаду Аргентум-110 становить 270 діб. Яка початкова кількість здатних до розпаду ядер, якщо за 810 діб розпалося 10000 атомів?</p>
+                <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Аргентум-110</li>
+                        <li>T₁/₂ = 270 діб</li>
+                        <li>t = 810 діб</li>
+                        <li>N_розп = 10000 атомів</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">N₀ - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>N_розп = N₀ * [1 - (1/2)^(t / T₁/₂)]</li>
+                        <li>t / T₁/₂ = 810 / 270 = 3</li>
+                        <li>10000 = N₀ * [1 - (1/2)³] = N₀ * [1 - 1/8] = N₀ * (7/8)</li>
+                        <li>N₀ = 10000 * (8/7) ≈ 11429 ядер</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 11429 ядер.</p>
+            </div>
+        </div>
+
+        <div id="variant2" class="variant-section hidden">
+             <h2 class="text-2xl font-semibold mb-6 text-center text-gray-700">Варіант 2</h2>
+
+             <div class="problem-card">
+                <p class="problem-statement">№1. Яка маса Урану-235 знадобиться, щоб розплавити лід масою 200 г при 0 °С та нагріти (утворену воду) до температури кипіння (100 °С)?</p>
+                <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>m_льоду = 200 г = 0.2 кг</li>
+                        <li>t_поч = 0 °C (лід)</li>
+                        <li>t_кін = 100 °C (вода)</li>
+                        <li>c_води = 4200 Дж/(кг·°C)</li>
+                        <li>L_плавл = 3.3 × 10⁵ Дж/кг</li>
+                        <li>W_поділу ≈ 3.204 × 10⁻¹¹ Дж</li>
+                        <li>m_атома(U-235) = 3.9 × 10⁻²⁵ кг</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">M_U235 - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Енергія плавлення: Q₁ = L_плавл * m_льоду = (3.3 × 10⁵) * 0.2 = 66000 Дж</li>
+                        <li>Енергія нагрівання: Q₂ = c_води * m_льоду * (100 - 0) = 4200 * 0.2 * 100 = 84000 Дж</li>
+                        <li>Загальна енергія: Q_заг = Q₁ + Q₂ = 66000 + 84000 = 150000 Дж</li>
+                        <li>Кількість поділів: N_поділів = Q_заг / W_поділу = 150000 / (3.204 × 10⁻¹¹) ≈ 4.68 × 10¹⁵ поділів</li>
+                        <li>Маса Урану-235: M_U235 = N_поділів * m_атома(U-235) = (4.68 × 10¹⁵) * (3.9 × 10⁻²⁵) ≈ 1.825 × 10⁻⁹ кг</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 1.825 × 10⁻⁹ кг (1.825 мікрограм).</p>
+            </div>
+
+            <div class="problem-card">
+                <p class="problem-statement">№2. Який період піврозпаду радіоактивного ізотопу, якщо через 404 доби залишилось 6.25 % атомів?</p>
+                 <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>t = 404 доби</li>
+                        <li>N(t) / N₀ = 6.25 % = 0.0625</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">T₁/₂ - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>N(t) / N₀ = (1/2)^(t / T₁/₂)</li>
+                        <li>0.0625 = (1/2)⁴</li>
+                        <li>(1/2)⁴ = (1/2)^(404 доби / T₁/₂)</li>
+                        <li>4 = 404 доби / T₁/₂</li>
+                        <li>T₁/₂ = 404 доби / 4 = 101 доба</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: 101 доба.</p>
+            </div>
+
+             <div class="problem-card">
+                <p class="problem-statement">№3. Яка кількість речовини міститься у зразку Урану-235, якщо його активність 3 × 10¹¹ Бк?</p>
+                 <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>A = 3 × 10¹¹ Бк</li>
+                        <li>Ізотоп: Уран-235</li>
+                        <li>T₁/₂(U-235) = 7.1 × 10⁸ років ≈ 2.24 × 10¹⁶ с</li>
+                        <li>NA ≈ 6.022 × 10²³ моль⁻¹</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">n - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Стала розпаду: λ = ln(2) / T₁/₂ ≈ 0.693 / (2.24 × 10¹⁶) ≈ 3.09 × 10⁻¹⁷ с⁻¹</li>
+                        <li>Кількість ядер: N = A / λ = (3 × 10¹¹) / (3.09 × 10⁻¹⁷) ≈ 9.71 × 10²⁷ ядер</li>
+                        <li>Кількість речовини: n = N / NA = (9.71 × 10²⁷) / (6.022 × 10²³) ≈ 1.61 × 10⁴ моль</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 1.61 × 10⁴ моль.</p>
+            </div>
+
+             <div class="problem-card">
+                <p class="problem-statement">№4. Знайти дефект мас Калію-41.</p>
+                 <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Калій-41 (⁴¹₁₉K)</li>
+                        <li>m_атома(K-41) = 40.96184 а.о.м.</li>
+                        <li>Z = 19, N = 22</li>
+                        <li>mH ≈ 1.00783 а.о.м.</li>
+                        <li>mn ≈ 1.00866 а.о.м.</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">Δm - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Δm ≈ (Z * mH + N * mn) - m_атома</li>
+                        <li>Δm ≈ (19 * 1.00783 + 22 * 1.00866) - 40.96184</li>
+                        <li>Δm ≈ (19.14877 + 22.19052) - 40.96184 ≈ 0.37745 а.о.м.</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 0.37745 а.о.м.</p>
+            </div>
+
+            <div class="problem-card">
+                <p class="problem-statement">№5. Стала розпаду радіоактивного Нептунію-237 дорівнює 9.98 × 10⁻¹⁵ с⁻¹. Скільки атомів міститься в препараті, якщо його активність складає 499 Бк?</p>
+                <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                         <li>λ (Np-237) = 9.98 × 10⁻¹⁵ с⁻¹</li>
+                         <li>A = 499 Бк</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">N - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>A = λ * N</li>
+                        <li>N = A / λ = 499 / (9.98 × 10⁻¹⁵) ≈ 5.00 × 10¹⁶ атомів</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 5.00 × 10¹⁶ атомів.</p>
+            </div>
+
+            <div class="problem-card">
+                <p class="problem-statement">№6. Період напіврозпаду Фосфору-32 14 діб, а початкова кількість здатних до розпаду ядер 42 × 10²². Визначте активність речовини.</p>
+                 <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Фосфор-32</li>
+                        <li>T₁/₂ = 14 діб = 1 209 600 с</li>
+                        <li>N₀ = 42 × 10²² ядер</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">A₀ - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Стала розпаду: λ = ln(2) / T₁/₂ ≈ 0.693 / (1 209 600) ≈ 5.73 × 10⁻⁷ с⁻¹</li>
+                        <li>Активність: A₀ = λ * N₀ = (5.73 × 10⁻⁷) * (42 × 10²²) ≈ 2.41 × 10¹⁷ Бк</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 2.41 × 10¹⁷ Бк.</p>
+            </div>
+        </div>
+
+        <div id="variant3" class="variant-section hidden">
+            <h2 class="text-2xl font-semibold mb-6 text-center text-gray-700">Варіант 3</h2>
+
+            <div class="problem-card">
+                <p class="problem-statement">№1. Скільки Урану-235 знадобиться, щоб перетворити лід масою 450 г, взятий при температурі -25 °С, у воду при температурі 45 °С?</p>
+                <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>m_льоду = 450 г = 0.45 кг</li>
+                        <li>t_поч = -25 °C</li>
+                        <li>t_кін = 45 °C</li>
+                        <li>c_льоду = 2100 Дж/(кг·°C)</li>
+                        <li>L_плавл = 3.3 × 10⁵ Дж/кг</li>
+                        <li>c_води = 4200 Дж/(кг·°C)</li>
+                        <li>W_поділу ≈ 3.204 × 10⁻¹¹ Дж</li>
+                        <li>m_атома(U-235) = 3.9 × 10⁻²⁵ кг</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">M_U235 - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Нагрів льоду: Q₁ = c_льоду * m_льоду * (0 - (-25)) = 2100 * 0.45 * 25 = 23625 Дж</li>
+                        <li>Плавлення льоду: Q₂ = L_плавл * m_льоду = (3.3 × 10⁵) * 0.45 = 148500 Дж</li>
+                        <li>Нагрів води: Q₃ = c_води * m_льоду * (45 - 0) = 4200 * 0.45 * 45 = 85050 Дж</li>
+                        <li>Загальна енергія: Q_заг = Q₁ + Q₂ + Q₃ = 23625 + 148500 + 85050 = 257175 Дж</li>
+                        <li>Кількість поділів: N_поділів = Q_заг / W_поділу = 257175 / (3.204 × 10⁻¹¹) ≈ 8.027 × 10¹⁵ поділів</li>
+                        <li>Маса Урану-235: M_U235 = N_поділів * m_атома(U-235) = (8.027 × 10¹⁵) * (3.9 × 10⁻²⁵) ≈ 3.13 × 10⁻⁹ кг</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 3.13 × 10⁻⁹ кг (3.13 мікрограм).</p>
+            </div>
+
+            <div class="problem-card">
+                <p class="problem-statement">№2. Через який час розпаду залишиться 6.25 % радіоактивних атомів Магнію-27?</p>
+                 <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Магній-27</li>
+                        <li>N(t) / N₀ = 6.25 % = 0.0625</li>
+                        <li>T₁/₂(Mg-27) = 10 хв</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">t - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>N(t) / N₀ = (1/2)^(t / T₁/₂)</li>
+                        <li>0.0625 = (1/2)⁴</li>
+                        <li>(1/2)⁴ = (1/2)^(t / 10 хв)</li>
+                        <li>4 = t / 10 хв => t = 40 хв</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: 40 хвилин.</p>
+            </div>
+
+             <div class="problem-card">
+                <p class="problem-statement">№3. В даний момент часу у радіоактивному зразку міститься 3.4 моль Кобальту-60. Визначте активність зразка.</p>
+                 <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Кобальт-60</li>
+                        <li>n = 3.4 моль</li>
+                        <li>T₁/₂(Co-60) = 5.3 роки ≈ 1.67 × 10⁸ с</li>
+                        <li>NA ≈ 6.022 × 10²³ моль⁻¹</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">A - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Стала розпаду: λ = ln(2) / T₁/₂ ≈ 0.693 / (1.67 × 10⁸) ≈ 4.15 × 10⁻⁹ с⁻¹</li>
+                        <li>Кількість ядер: N = n * NA = 3.4 * (6.022 × 10²³) ≈ 2.047 × 10²⁴ ядер</li>
+                        <li>Активність: A = λ * N = (4.15 × 10⁻⁹) * (2.047 × 10²⁴) ≈ 8.5 × 10¹⁵ Бк</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 8.5 × 10¹⁵ Бк.</p>
+            </div>
+
+             <div class="problem-card">
+                <p class="problem-statement">№4. Знайти дефект мас Плюмбуму-206.</p>
+                 <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Плюмбум-206 (²⁰⁶₈₂Pb)</li>
+                        <li>m_атома(Pb-206) = 205.97446 а.о.м.</li>
+                        <li>Z = 82, N = 124</li>
+                        <li>mH ≈ 1.00783 а.о.м.</li>
+                        <li>mn ≈ 1.00866 а.о.м.</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">Δm - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Δm ≈ (Z * mH + N * mn) - m_атома</li>
+                        <li>Δm ≈ (82 * 1.00783 + 124 * 1.00866) - 205.97446</li>
+                        <li>Δm ≈ (82.64206 + 125.07384) - 205.97446 ≈ 1.74144 а.о.м.</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 1.74144 а.о.м.</p>
+            </div>
+
+            <div class="problem-card">
+                <p class="problem-statement">№5. Активність речовини дорівнює 13.2 кКі, а початкова кількість здатних до розпаду ядер 4.2 × 10¹⁷. Обчисліть період напіврозпаду.</p>
+                <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>A₀ = 13.2 кКі = 4.884 × 10¹⁴ Бк</li>
+                        <li>N₀ = 4.2 × 10¹⁷ ядер</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">T₁/₂ - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>A₀ = (ln(2) / T₁/₂) * N₀</li>
+                        <li>T₁/₂ = (ln(2) * N₀) / A₀</li>
+                        <li>T₁/₂ ≈ (0.693 * 4.2 × 10¹⁷) / (4.884 × 10¹⁴) ≈ 5.96 × 10² с</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 596 с (або ≈ 9.9 хв).</p>
+            </div>
+
+            <div class="problem-card">
+                <p class="problem-statement">№6. Яка початкова маса здатних до розпаду ядер Радону-222, якщо за 19 діб розпалося 12 г речовини?</p>
+                 <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Радон-222</li>
+                        <li>t = 19 діб</li>
+                        <li>m_розп = 12 г</li>
+                        <li>T₁/₂(Rn-222) ≈ 3.8 доби</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">m₀ - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>m_розп = m₀ * [1 - (1/2)^(t / T₁/₂)]</li>
+                        <li>t / T₁/₂ = 19 / 3.8 = 5</li>
+                        <li>12 г = m₀ * [1 - (1/2)⁵] = m₀ * [1 - 1/32] = m₀ * (31/32)</li>
+                        <li>m₀ = 12 г * (32 / 31) ≈ 12.39 г</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 12.4 г.</p>
+            </div>
+        </div>
+
+        <div id="variant4" class="variant-section hidden">
+            <h2 class="text-2xl font-semibold mb-6 text-center text-gray-700">Варіант 4</h2>
+
+            <div class="problem-card">
+                <p class="problem-statement">№1. Маса Урану-235 становить 8.5 г. Яку масу води, взятої при температурі 20 °С, можна перетворити на пару?</p>
+                <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>M_U235 = 8.5 г = 0.0085 кг</li>
+                        <li>t_поч = 20 °C</li>
+                        <li>t_кін = 100 °C (нагрів + пароутворення)</li>
+                        <li>c_води = 4200 Дж/(кг·°C)</li>
+                        <li>L_пароутв = 2.3 × 10⁶ Дж/кг</li>
+                        <li>W_поділу ≈ 3.204 × 10⁻¹¹ Дж</li>
+                        <li>m_атома(U-235) = 3.9 × 10⁻²⁵ кг</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">m_води - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Кількість атомів U-235: N_U235 = 0.0085 / (3.9 × 10⁻²⁵) ≈ 2.179 × 10²² ядер</li>
+                        <li>Загальна енергія: Q_заг = N_U235 * W_поділу ≈ (2.179 × 10²²) * (3.204 × 10⁻¹¹) ≈ 6.982 × 10¹¹ Дж</li>
+                        <li>Енергія на нагрів 1 кг води: Q_нагр_1кг = 4200 * 1 * (100 - 20) = 336000 Дж/кг</li>
+                        <li>Енергія на випаровування 1 кг води: Q_випар_1кг = 2.3 × 10⁶ Дж/кг</li>
+                        <li>Загальна енергія на 1 кг води: Q_на_1кг = 336000 + 2300000 = 2.636 × 10⁶ Дж/кг</li>
+                        <li>Маса води: m_води = Q_заг / Q_на_1кг = (6.982 × 10¹¹) / (2.636 × 10⁶) ≈ 2.65 × 10⁵ кг</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 2.65 × 10⁵ кг (265 тонн) води.</p>
+            </div>
+
+            <div class="problem-card">
+                <p class="problem-statement">№2. Який період піврозпаду радіоактивного ізотопу, якщо через 170 хв розпалося 0.96875 всіх атомів?</p>
+                 <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>t = 170 хв</li>
+                        <li>Частка розпаду = 0.96875</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">T₁/₂ - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Частка залишку: N(t) / N₀ = 1 - 0.96875 = 0.03125 = 1/32 = (1/2)⁵</li>
+                        <li>N(t) / N₀ = (1/2)^(t / T₁/₂)</li>
+                        <li>(1/2)⁵ = (1/2)^(170 хв / T₁/₂)</li>
+                        <li>5 = 170 хв / T₁/₂</li>
+                        <li>T₁/₂ = 170 хв / 5 = 34 хв</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: 34 хвилини.</p>
+            </div>
+
+             <div class="problem-card">
+                <p class="problem-statement">№3. Яка кількість речовини міститься у зразку Торій-229, якщо його активність 12 Кі?</p>
+                 <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Торій-229</li>
+                        <li>A = 12 Кі = 12 * 3.7 × 10¹⁰ Бк = 4.44 × 10¹¹ Бк</li>
+                        <li>T₁/₂(Th-229) = 7000 років ≈ 2.21 × 10¹¹ с</li>
+                        <li>NA ≈ 6.022 × 10²³ моль⁻¹</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">n - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Стала розпаду: λ = ln(2) / T₁/₂ ≈ 0.693 / (2.21 × 10¹¹) ≈ 3.136 × 10⁻¹² с⁻¹</li>
+                        <li>Кількість ядер: N = A / λ = (4.44 × 10¹¹) / (3.136 × 10⁻¹²) ≈ 1.416 × 10²³ ядер</li>
+                        <li>Кількість речовини: n = N / NA = (1.416 × 10²³) / (6.022 × 10²³) ≈ 0.235 моль</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 0.235 моль.</p>
+            </div>
+
+             <div class="problem-card">
+                <p class="problem-statement">№4. Знайти енергію зв'язку Кальцію-44.</p>
+                 <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Кальцій-44 (⁴⁴₂₀Ca)</li>
+                        <li>m_атома(Ca-44) = 43.95549 а.о.м.</li>
+                        <li>Z = 20, N = 24</li>
+                        <li>mH ≈ 1.00783 а.о.м.</li>
+                        <li>mn ≈ 1.00866 а.о.м.</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">Eзв - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Дефект мас: Δm ≈ (Z * mH + N * mn) - m_атома</li>
+                        <li>Δm ≈ (20 * 1.00783 + 24 * 1.00866) - 43.95549 ≈ 0.40895 а.о.м.</li>
+                        <li>Енергія зв'язку: Eзв = Δm * 931.5 МеВ/а.о.м.</li>
+                        <li>Eзв ≈ 0.40895 * 931.5 ≈ 380.9 МеВ</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 381 МеВ.</p>
+            </div>
+
+            <div class="problem-card">
+                <p class="problem-statement">№5. Скільки атомів міститься в зразку Стронцію-90, якщо його активність складає 840 Бк?</p>
+                 <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Стронцій-90</li>
+                        <li>A = 840 Бк</li>
+                        <li>T₁/₂(Sr-90) = 28 років ≈ 8.837 × 10⁸ с</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">N - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Стала розпаду: λ = ln(2) / T₁/₂ ≈ 0.693 / (8.837 × 10⁸) ≈ 7.84 × 10⁻¹⁰ с⁻¹</li>
+                        <li>Кількість атомів: N = A / λ = 840 / (7.84 × 10⁻¹⁰) ≈ 1.07 × 10¹² атомів</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 1.07 × 10¹² атомів.</p>
+            </div>
+
+            <div class="problem-card">
+                <p class="problem-statement">№6. Початкова маса Іридію-192 45 г. Визначте активність речовини.</p>
+                <div><span class="section-label">Дано:</span>
+                    <ul class="section-content list-disc list-inside">
+                        <li>Ізотоп: Іридій-192</li>
+                        <li>m₀ = 45 г</li>
+                        <li>T₁/₂(Ir-192) = 75 діб ≈ 6.48 × 10⁶ с</li>
+                        <li>M(Ir-192) ≈ 192 г/моль</li>
+                        <li>NA ≈ 6.022 × 10²³ моль⁻¹</li>
+                    </ul>
+                </div>
+                <div><span class="section-label">Знайти:</span>
+                    <p class="section-content">A₀ - ?</p>
+                </div>
+                <div><span class="section-label">Розв'язок:</span>
+                    <ol class="section-content list-decimal list-inside">
+                        <li>Стала розпаду: λ = ln(2) / T₁/₂ ≈ 0.693 / (6.48 × 10⁶) ≈ 1.07 × 10⁻⁷ с⁻¹</li>
+                        <li>Кількість речовини: n = m₀ / M = 45 / 192 ≈ 0.2344 моль</li>
+                        <li>Кількість ядер: N₀ = n * NA ≈ 0.2344 * (6.022 × 10²³) ≈ 1.41 × 10²³ ядер</li>
+                        <li>Активність: A₀ = λ * N₀ = (1.07 × 10⁻⁷) * (1.41 × 10²³) ≈ 1.51 × 10¹⁶ Бк</li>
+                    </ol>
+                </div>
+                <p class="final-answer">Відповідь: ≈ 1.51 × 10¹⁶ Бк.</p>
+            </div>
+        </div>
+
+        <div class="mt-10 p-6 bg-gray-200 rounded-lg shadow-inner">
+            <h3 class="text-xl font-semibold mb-4 text-gray-700">Основні Константи та Дані</h3>
+            <ul class="constants-list text-gray-800 text-sm">
+                <li>Питома теплоємність води (c_води): <code>4200 Дж/(кг·°C)</code></li>
+                <li>Питома теплота пароутворення води (L_пароутв): <code>2.3 × 10⁶ Дж/кг</code></li>
+                <li>Питома теплота плавлення льоду (L_плавл): <code>3.3 × 10⁵ Дж/кг</code></li>
+                <li>Питома теплоємність льоду (c_льоду): <code>2100 Дж/(кг·°C)</code></li>
+                <li>Енергія поділу 1 ядра U-235 (W_поділу): <code>≈ 200 МеВ ≈ 3.204 × 10⁻¹¹ Дж</code></li>
+                <li>Маса атома U-235: <code>3.9 × 10⁻²⁵ кг</code></li>
+                <li>Маса протона (mp): <code>≈ 1.00728 а.о.м.</code></li>
+                <li>Маса нейтрона (mn): <code>≈ 1.00866 а.о.м.</code></li>
+                <li>Маса атома Гідрогену (mH): <code>≈ 1.00783 а.о.м.</code></li>
+                <li>Атомна одиниця маси (а.о.м.): <code>1 а.о.м. ≈ 1.6605 × 10⁻²⁷ кг</code></li>
+                <li>Число Авогадро (NA): <code>≈ 6.022 × 10²³ моль⁻¹</code></li>
+                <li>Стала Кюрі: <code>1 Кі = 3.7 × 10¹⁰ Бк</code></li>
+                <li><code>ln(2) ≈ 0.693</code></li>
+                <li><code>1 МеВ = 1.602 × 10⁻¹³ Дж</code></li>
+                <li>Періоди піврозпаду (з фото): U-235 (710 млн р.), I-131 (8 діб), Pu-239 (λ=9.01×10⁻¹³ с⁻¹), Ag-110 (270 діб), Mg-27 (10 хв), Co-60 (5.3 р.), Th-229 (7000 р.), Sr-90 (28 р.), Ir-192 (75 діб), Rn-222 (≈3.8 діб - довідкове)</li>
+                <li>Маси атомів (з фото): Po-210 (209.98297), K-41 (40.96184), Pb-206 (205.97446), Ca-44 (43.95549)</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function showVariant(variantId) {
+            // Сховати всі секції варіантів
+            const sections = document.querySelectorAll('.variant-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Показати вибрану секцію
+            const activeSection = document.getElementById(variantId);
+            if (activeSection) {
+                activeSection.classList.remove('hidden');
+            }
+
+            // Оновити активний таб
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => {
+                button.classList.remove('active-tab');
+                if (button.getAttribute('onclick') === `showVariant('${variantId}')`) {
+                    button.classList.add('active-tab');
+                }
+            });
+        }
+
+        // Показати перший варіант за замовчуванням
+        document.addEventListener('DOMContentLoaded', () => {
+            showVariant('variant1');
+        });
+    </script>
+
+</body>
+</html>
