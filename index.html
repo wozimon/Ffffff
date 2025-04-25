@@ -9,66 +9,64 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Стилі для табів та базові стилі */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* gray-100 */
+            background-color: #f3f4f6;
         }
         .tab-button {
-            padding: 0.75rem 1.5rem; /* py-3 px-6 */
-            color: #4b5563; /* gray-600 */
+            padding: 0.75rem 1.5rem;
+            color: #4b5563;
             border-bottom: 2px solid transparent;
             transition: all 0.3s ease;
-            font-weight: 500; /* medium */
+            font-weight: 500;
             cursor: pointer;
         }
         .tab-button:hover {
-            color: #1d4ed8; /* blue-700 */
-            border-bottom-color: #bfdbfe; /* blue-200 */
+            color: #1d4ed8;
+            border-bottom-color: #bfdbfe;
         }
         .tab-button.active-tab {
-            color: #1d4ed8; /* blue-700 */
-            border-bottom-color: #1d4ed8; /* blue-700 */
-            font-weight: 600; /* semibold */
+            color: #1d4ed8;
+            border-bottom-color: #1d4ed8;
+            font-weight: 600;
         }
         .variant-section {
-            padding-top: 1.5rem; /* pt-6 */
+            padding-top: 1.5rem;
         }
         .problem-card {
-            background-color: #ffffff; /* white */
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-            padding: 1.5rem; /* p-6 */
-            margin-bottom: 1.5rem; /* mb-6 */
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
         }
         .problem-statement {
-            margin-bottom: 1rem; /* mb-4 */
-            font-weight: 500; /* medium */
-            color: #1f2937; /* gray-800 */
+            margin-bottom: 1rem;
+            font-weight: 500;
+            color: #1f2937;
         }
         .section-label {
-            font-weight: 600; /* semibold */
-            color: #374151; /* gray-700 */
+            font-weight: 600;
+            color: #374151;
             display: block;
-            margin-bottom: 0.25rem; /* mb-1 */
+            margin-bottom: 0.25rem;
         }
         .section-content {
-            margin-left: 1rem; /* ml-4 */
-            margin-bottom: 0.75rem; /* mb-3 */
-            color: #1f2937; /* gray-800 */
-            line-height: 1.6; /* leading-relaxed */
+            margin-left: 1rem;
+            margin-bottom: 0.75rem;
+            color: #1f2937;
+            line-height: 1.6;
         }
         .final-answer {
-            margin-top: 1rem; /* mt-4 */
-            font-weight: 700; /* bold */
-            color: #059669; /* green-700 */
+            margin-top: 1rem;
+            font-weight: 700;
+            color: #059669;
         }
-        /* Стиль для констант */
         .constants-list li {
-            margin-bottom: 0.5rem; /* mb-2 */
+            margin-bottom: 0.5rem;
         }
         .constants-list code {
-            background-color: #e5e7eb; /* gray-200 */
+            background-color: #e5e7eb;
             padding: 0.1rem 0.3rem;
             border-radius: 0.25rem;
             font-size: 0.9em;
@@ -342,8 +340,8 @@
                 <p class="problem-statement">№5. Стала розпаду радіоактивного Нептунію-237 дорівнює 9.98 × 10⁻¹⁵ с⁻¹. Скільки атомів міститься в препараті, якщо його активність складає 499 Бк?</p>
                 <div><span class="section-label">Дано:</span>
                     <ul class="section-content list-disc list-inside">
-                         <li>λ (Np-237) = 9.98 × 10⁻¹⁵ с⁻¹</li>
-                         <li>A = 499 Бк</li>
+                          <li>λ (Np-237) = 9.98 × 10⁻¹⁵ с⁻¹</li>
+                          <li>A = 499 Бк</li>
                     </ul>
                 </div>
                 <div><span class="section-label">Знайти:</span>
@@ -705,19 +703,16 @@
 
     <script>
         function showVariant(variantId) {
-            // Сховати всі секції варіантів
             const sections = document.querySelectorAll('.variant-section');
             sections.forEach(section => {
                 section.classList.add('hidden');
             });
 
-            // Показати вибрану секцію
             const activeSection = document.getElementById(variantId);
             if (activeSection) {
                 activeSection.classList.remove('hidden');
             }
 
-            // Оновити активний таб
             const buttons = document.querySelectorAll('.tab-button');
             buttons.forEach(button => {
                 button.classList.remove('active-tab');
@@ -727,7 +722,6 @@
             });
         }
 
-        // Показати перший варіант за замовчуванням
         document.addEventListener('DOMContentLoaded', () => {
             showVariant('variant1');
         });
